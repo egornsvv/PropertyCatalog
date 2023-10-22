@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/authorizationFragment">
+
+    <fragment
+        android:id="@+id/authorizationFragment"
+        android:name="com.example.realestatecatalog.ui.AuthorizationFragment"
+        android:label="fragment_authorization"
+        tools:layout="@layout/fragment_authorization" >
+        <action
+            android:id="@+id/action_authorizationFragment_to_listOfPropertyFragment"
+            app:destination="@id/listOfPropertyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listOfPropertyFragment"
+        android:name="com.example.realestatecatalog.ui.ListOfPropertyFragment"
+        android:label="fragment_list_of_property"
+        tools:layout="@layout/fragment_list_of_property" >
+        <action
+            android:id="@+id/action_listOfPropertyFragment_to_authorizationFragment"
+            app:destination="@id/authorizationFragment" />
+        <action
+            android:id="@+id/action_listOfPropertyFragment_to_addPropertyFragment"
+            app:destination="@id/addPropertyFragment" />
+        <action
+            android:id="@+id/action_listOfPropertyFragment_to_vewingPropertyFragment"
+            app:destination="@id/vewingPropertyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPropertyFragment"
+        android:name="com.example.realestatecatalog.ui.AddPropertyFragment"
+        android:label="fragment_add_property"
+        tools:layout="@layout/fragment_add_property" >
+
+        <action
+            android:id="@+id/action_addPropertyFragment_to_vewingPropertyFragment"
+            app:destination="@id/vewingPropertyFragment">
+
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/vewingPropertyFragment"
+        android:name="com.example.realestatecatalog.ui.VewingPropertyFragment"
+        android:label="fragment_vewing_property"
+        tools:layout="@layout/fragment_vewing_property" >
+        <action
+            android:id="@+id/action_vewingPropertyFragment_to_editingPropertyFragment"
+            app:destination="@id/editingPropertyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editingPropertyFragment"
+        android:name="com.example.realestatecatalog.ui.EditingPropertyFragment"
+        android:label="fragment_editing_property"
+        tools:layout="@layout/fragment_editing_property" >
+        <action
+            android:id="@+id/action_editingPropertyFragment_to_vewingPropertyFragment"
+            app:destination="@id/vewingPropertyFragment" />
+    </fragment>
+
+</navigation>
